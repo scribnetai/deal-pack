@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deal Pack — turn sizing outputs into a customer-ready refresh proposal</title>
+<meta name="description" content="Import JSON exports from the RVTools Analyzer, Server Sizer, Storage Sizer and Network Sizer and get a customer-facing refresh proposal: executive summary, consolidated BOM, quote sanity checklist, TCO model, and a downloadable report. 100% in your browser, nothing uploaded.">
+<link rel="stylesheet" href="css/styles.css?v=1">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%234f8cff'/><text x='50' y='68' font-size='52' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='bold'>DP</text></svg>">
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#" id="brandHome">
+      <span class="brand-badge">DP</span>
+      <span class="brand-name">Deal Pack</span>
+    </a>
+    <nav class="nav-links">
+      <a class="cc-link" href="https://scribnetai.github.io/se-command-center/">&#8962; SE Command Center</a>
+      <a href="#how">How it works</a>
+      <a href="#faq">FAQ</a>
+      <a href="https://github.com/scribnetai/deal-pack" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ LANDING ============ -->
+<main id="landing">
+  <section class="hero">
+    <div class="hero-glow"></div>
+    <div class="hero-inner">
+      <div class="pill">🔒 100% client-side &mdash; zero data retention</div>
+      <h1>From sizing math to <span class="accent">signed deal</span>.</h1>
+      <p class="lede">Deal Pack eats the JSON exports from your RVTools Analyzer, Server Sizer, Storage Sizer and Network Sizer — and spits out the thing that actually moves a deal: a customer-facing refresh proposal with an executive summary, a consolidated BOM, a quote sanity checklist, a TCO model, and a downloadable report. 100% in your browser, nothing uploaded.</p>
+      <div class="trust-row">
+        <div class="trust"><span class="trust-icon">🛡️</span><div><strong>No upload.</strong><span>Data never leaves your PC</span></div></div>
+        <div class="trust"><span class="trust-icon">🧠</span><div><strong>No account.</strong><span>Just open and build</span></div></div>
+        <div class="trust"><span class="trust-icon">📴</span><div><strong>Works offline.</strong><span>Disconnect after load if you like</span></div></div>
+        <div class="trust"><span class="trust-icon">👤</span><div><strong>Generic by design.</strong><span>No customer names needed</span></div></div>
+      </div>
+      <a class="cta" href="#start">Build a deal pack ↓</a>
+    </div>
+  </section>
+
+  <section id="how" class="section">
+    <div class="wrap">
+      <h2>How it works</h2>
+      <div class="cards3">
+        <div class="card"><h3>1️⃣ Import the suite's exports</h3><p>Drop in the portable <code>.json</code> project files from the <strong>RVTools Analyzer</strong>, <strong>Server Sizer</strong>, <strong>Storage Sizer</strong> and <strong>Network Sizer</strong> (💾 Projects → Export in each app). Any subset works — the proposal fills in whatever you've got. No exports handy? The <strong>demo deal</strong> loads a full synthetic engagement in one click.</p></div>
+        <div class="card"><h3>2️⃣ Get the proposal</h3><p>Deal Pack recomputes every number with the same math as the source apps — no re-typing, no drift. Out comes an executive summary, current-state findings, the proposed architecture per cluster, and one consolidated BOM: servers, switches and storage capacity in a single list.</p></div>
+        <div class="card"><h3>3️⃣ Check, cost, ship</h3><p>Work the <strong>quote sanity checklist</strong> (optics, phantom cores, oversubscription, rails, PSUs — the classics that cause quote rework), sanity-check the money on the <strong>TCO tab</strong>, then download the whole thing as a clean standalone <strong>HTML report</strong> you can send to the customer.</p></div>
+      </div>
+
+      <h3 class="mt">What it reads</h3>
+      <table class="data">
+        <thead><tr><th>App export</th><th>What Deal Pack takes from it</th></tr></thead>
+        <tbody>
+          <tr><td><code>rvtools-analyzer-*.json</code></td><td>Current-state findings: hosts, VMs, clusters, licensed cores (16-core/socket min), snapshots</td></tr>
+          <tr><td><code>server-sizer-*.json</code></td><td>Per-cluster builds: platform, host counts, binding constraint, spares, licensed cores</td></tr>
+          <tr><td><code>storage-sizer-*.json</code></td><td>Per-pool raw capacity required by the horizon year, with protection &amp; reduction settings</td></tr>
+          <tr><td><code>network-sizer-*.json</code></td><td>TOR + FC switch plan, net-new vs existing inventory, oversubscription</td></tr>
+        </tbody>
+      </table>
+      <p class="muted">Each import is validated against the real export envelope of its app — wrong-app files get a clear "drop it on the matching card" message instead of silent garbage.</p>
+
+      <h3 class="mt">Honest limitations</h3>
+      <ul>
+        <li><strong>Re-export to refresh.</strong> Deal Pack recomputes from the JSON you import. If you re-tune a sizer afterwards, export again and re-import — it won't know.</li>
+        <li><strong>The TCO tab is a model, not a quote.</strong> No taxes, financing, discount tiers, or vendor price lists. Garbage in, garbage out — the inputs are yours.</li>
+        <li><strong>The BOM is quantities + descriptions, not orderable SKUs.</strong> Storage lines are capacity requirements ("not a SKU") — translate them into array configs in your vendor tool.</li>
+        <li><strong>Demo data is synthetic.</strong> It exists so you can see the whole flow in one click; don't quote it.</li>
+      </ul>
+
+      <h3 class="mt" id="faq">FAQ</h3>
+      <div class="card" style="margin-bottom:12px"><h3>Do I need all four imports?</h3><p>No. Any subset works — import one sizer and you'll get that section of the proposal. The more you import, the more complete the pack.</p></div>
+      <div class="card" style="margin-bottom:12px"><h3>Where does my data go?</h3><p>Nowhere. Everything runs in your browser: the proposal, the BOM, the checklist, the TCO. Named projects and autosave use <code>localStorage</code> — still on your machine, never uploaded. Very large imports skip browser saves (you'll get a nudge) and the portable Export file still works.</p></div>
+      <div class="card" style="margin-bottom:12px"><h3>The numbers look off — what gives?</h3><p>Deal Pack runs the exact same math as the source apps, so a mismatch means the import is stale: re-export from the app after your last tuning change, then re-import here.</p></div>
+      <div class="card" style="margin-bottom:12px"><h3>Can I send the report to a customer?</h3><p>That's what it's for — the downloaded HTML is standalone and prints cleanly. But read it first: it's generated from your inputs, and you're the SE signing off on it.</p></div>
+      <div class="card" style="margin-bottom:12px"><h3>Why do storage BOM lines say "not a SKU"?</h3><p>Because the storage sizer outputs a capacity requirement (TB raw by year N), not something you can order. Map each line to array/shelf configs in your vendor configurator.</p></div>
+    </div>
+  </section>
+
+  <section id="changelog" class="section">
+    <div class="wrap">
+      <div class="eyebrow">History</div>
+      <h2>Changelog</h2>
+      <details class="changelog-details">
+        <summary>What changed and when.</summary>
+        <div id="changelog-body"></div>
+      </details>
+    </div>
+  </section>
+</main>
+
+<!-- ============ WORKSPACE ============ -->
+<main id="workspace" hidden>
+  <div class="wrap">
+    <div class="proj-bar" id="projBar">
+      <div class="proj-id"><span>💾</span><span id="projName">Untitled deal</span><span class="proj-saved" id="projSaved"></span></div>
+      <div class="proj-actions">
+        <button class="btn ghost" id="projBtn">💾 Projects</button>
+        <button class="btn ghost" id="projExportBtn">⬇ Export</button>
+        <button class="btn ghost" id="projImportBtn">⬆ Import</button>
+        <input type="file" id="projImportFile" accept=".json,application/json" hidden>
+      </div>
+    </div>
+    <div class="proj-panel" id="projPanel" hidden>
+      <div class="proj-save-row">
+        <input id="projNameInput" maxlength="60" placeholder="Deal name — e.g. Q4 refresh deal (stays in this browser)">
+        <button class="btn primary" id="projDoSave">Save deal</button>
+      </div>
+      <div id="projList" class="proj-list"></div>
+      <p class="muted" style="font-size:.8rem;margin:8px 0 0">Deals live in this browser (localStorage) — nothing uploaded. Use <strong>Export</strong> for a portable <code>.json</code> you can keep with the engagement files or move to another machine.</p>
+    </div>
+    <div class="proj-toast" id="projToast" hidden></div>
+
+    <section id="start" class="panel">
+      <h2 style="margin-top:0">🤝 The deal workspace</h2>
+      <p class="muted">Import project files from the suite (💾 Projects → Export in each app), or load the demo deal to see the whole flow. Everything recomputes locally the moment an import lands.</p>
+      <div class="import-grid" id="importGrid">
+        <div class="import-card" data-slot="analyzer">
+          <h4>🔍 RVTools Analyzer</h4>
+          <div class="st" id="st-analyzer">No import yet — current-state findings will be empty.</div>
+          <div class="row">
+            <button class="btn ghost" data-import="analyzer">Import JSON</button>
+            <button class="btn danger-ghost" data-clear="analyzer" hidden>Remove</button>
+          </div>
+        </div>
+        <div class="import-card" data-slot="server">
+          <h4>🖥️ Server Sizer</h4>
+          <div class="st" id="st-server">No import yet — no compute builds.</div>
+          <div class="row">
+            <button class="btn ghost" data-import="server">Import JSON</button>
+            <button class="btn danger-ghost" data-clear="server" hidden>Remove</button>
+          </div>
+        </div>
+        <div class="import-card" data-slot="storage">
+          <h4>💾 Storage Sizer</h4>
+          <div class="st" id="st-storage">No import yet — no capacity plan.</div>
+          <div class="row">
+            <button class="btn ghost" data-import="storage">Import JSON</button>
+            <button class="btn danger-ghost" data-clear="storage" hidden>Remove</button>
+          </div>
+        </div>
+        <div class="import-card" data-slot="network">
+          <h4>🌐 Network Sizer</h4>
+          <div class="st" id="st-network">No import yet — no switch plan.</div>
+          <div class="row">
+            <button class="btn ghost" data-import="network">Import JSON</button>
+            <button class="btn danger-ghost" data-clear="network" hidden>Remove</button>
+          </div>
+        </div>
+      </div>
+      <input type="file" id="slotFile" accept=".json,application/json" hidden>
+      <div class="row" style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn primary" id="demoBtn">✨ Load demo deal</button>
+        <button class="btn ghost" id="startOverBtn">↺ Start over</button>
+      </div>
+      <p class="muted small" style="margin-bottom:0">Demo data is synthetic — it shows the full flow in one click and is clearly labeled everywhere it appears.</p>
+    </section>
+
+    <nav class="tabs" id="tabs">
+      <button data-tab="proposal" class="active">Proposal</button>
+      <button data-tab="bom">BOM</button>
+      <button data-tab="checklist">Checklist</button>
+      <button data-tab="tco">TCO</button>
+      <button data-tab="report">Report</button>
+    </nav>
+
+    <section id="tab-proposal" class="tab-panel proposal"></section>
+    <section id="tab-bom" class="tab-panel" hidden></section>
+    <section id="tab-checklist" class="tab-panel" hidden></section>
+    <section id="tab-tco" class="tab-panel" hidden></section>
+    <section id="tab-report" class="tab-panel" hidden></section>
+  </div>
+</main>
+
+<script src="js/logic.js?v=1"></script>
+<script src="js/app.js?v=1"></script>
+</body>
+</html>
