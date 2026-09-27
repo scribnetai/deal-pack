@@ -10,3 +10,4 @@
 
 ## 2026-09-27
 - Added top-left app-switcher dropdown on the brand mark: one-click jumps to every app in the suite (full index, this page marked).
+- Fixed: customer report footer now references https://deal-pack.scribnet.io (was legacy github.io URL).
