@@ -582,11 +582,6 @@ function wireApp() {
     $('landing').hidden = true; $('workspace').hidden = false;
     window.scrollTo({ top: 0 });
   });
-  $('brandHome').addEventListener('click', (e) => {
-    e.preventDefault();
-    $('workspace').hidden = true; $('landing').hidden = false;
-    window.scrollTo({ top: 0 });
-  });
   // Nav anchor links (How it works / FAQ) target sections inside #landing.
   // When the deal workspace is open, #landing is hidden and the browser can't
   // scroll to a hidden target — so exit to the landing first, then jump.

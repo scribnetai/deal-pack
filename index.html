@@ -5,17 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Deal Pack — turn sizing outputs into a customer-ready refresh proposal</title>
 <meta name="description" content="Import JSON exports from the RVTools Analyzer, Server Sizer, Storage Sizer and Network Sizer and get a customer-facing refresh proposal: executive summary, consolidated BOM, quote sanity checklist, TCO model, and a downloadable report. 100% in your browser, nothing uploaded.">
-<link rel="stylesheet" href="css/styles.css?v=1">
+<link rel="stylesheet" href="css/styles.css?v=2">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%234f8cff'/><text x='50' y='68' font-size='52' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='bold'>DP</text></svg>">
 </head>
 <body>
 
 <header class="nav">
   <div class="nav-inner">
-    <a class="brand" href="#" id="brandHome">
-      <span class="brand-badge">DP</span>
-      <span class="brand-name">Deal Pack</span>
-    </a>
+    <div class="brand-dropdown" id="brandDropdown">
+      <button class="brand" id="brandHome" aria-haspopup="true" aria-expanded="false" title="Switch app">
+        <span class="brand-badge">DP</span>
+        <span class="brand-name">Deal Pack</span>
+        <span class="brand-caret">▾</span>
+      </button>
+      <div class="brand-menu" id="brandMenu" role="menu" aria-label="Switch app"></div>
+    </div>
     <nav class="nav-links">
       <a class="cc-link" href="https://scribnetai.github.io/se-command-center/">&#8962; SE Command Center</a>
       <a href="#how">How it works</a>
@@ -177,6 +181,7 @@
 </main>
 
 <script src="js/logic.js?v=1"></script>
-<script src="js/app.js?v=2"></script>
+<script src="js/app-switcher.js?v=1"></script>
+<script src="js/app.js?v=3"></script>
 </body>
 </html>

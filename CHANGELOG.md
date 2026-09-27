@@ -7,3 +7,6 @@
 - Added TCO tab: old-vs-new cost model over 3 or 5 years with your own inputs (VMware licensing, per-core platform pricing, power, support, capex). Labeled honestly as a planning model, not a quote.
 - Added 💾 Projects: named saves in this browser, portable JSON export/import, and automatic session restore. Large imports skip browser saves with a nudge — Export still works. Nothing uploaded, ever.
 - Import validation mirrors each app's real export envelope — wrong-app files are rejected with a pointer to the right import card.
+
+## 2026-09-27
+- Added top-left app-switcher dropdown on the brand mark: one-click jumps to every app in the suite (full index, this page marked).
