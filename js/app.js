@@ -587,6 +587,20 @@ function wireApp() {
     $('workspace').hidden = true; $('landing').hidden = false;
     window.scrollTo({ top: 0 });
   });
+  // Nav anchor links (How it works / FAQ) target sections inside #landing.
+  // When the deal workspace is open, #landing is hidden and the browser can't
+  // scroll to a hidden target — so exit to the landing first, then jump.
+  document.querySelectorAll('.nav-links a[href^="#"]').forEach((a) => {
+    a.addEventListener('click', (e) => {
+      const href = a.getAttribute('href');
+      const target = href.length > 1 && document.querySelector(href);
+      if (!target) return; // external links (GitHub) behave normally
+      e.preventDefault();
+      if ($('landing').hidden) { $('workspace').hidden = true; $('landing').hidden = false; }
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      history.replaceState(null, '', href);
+    });
+  });
   document.querySelectorAll('#tabs button').forEach((b) => { b.onclick = () => switchTab(b.dataset.tab); });
   document.querySelectorAll('[data-import]').forEach((b) => {
     b.onclick = () => { pendingSlot = b.dataset.import; $('slotFile').click(); };
