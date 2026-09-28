@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-09-28
+- TLS certificate provisioned for the `deal-pack.scribnet.io` custom domain (GitHub's stuck DNS check was reset 2026-09-28); HTTPS is now enforced on the site. App-switcher menu links switched from legacy `scribnetai.github.io` URLs to direct `https://<app>.scribnet.io` URLs for all 10 apps (footer/launcher links updated likewise). This entry also covers the net-zero CNAME delete/re-add commits from the DNS-check reset, which carried no changelog entries. Touched: index.html, js/app-switcher.js.
+
+
 ## 2026-09-26
 - Launched: Deal Pack — the deal workspace for the suite. Import portable JSON exports from the RVTools Analyzer, Server Sizer, Storage Sizer and Network Sizer (any subset) and get a customer-facing refresh proposal: executive summary, current-state findings, proposed architecture, consolidated BOM, quote sanity checklist, TCO model, and a downloadable standalone HTML report.
 - Added ✨ demo deal: one click loads a full synthetic engagement so the whole flow is visible with no imports. Clearly labeled everywhere as made-up data.
