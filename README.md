@@ -1,10 +1,10 @@
 # Deal Pack 🤝
 
 The deal workspace for the presales suite. Import the portable JSON exports from
-[RVTools Analyzer](https://scribnetai.github.io/rvtools-analyzer/),
-[Server Sizer](https://scribnetai.github.io/server-sizer/),
-[Storage Sizer](https://scribnetai.github.io/storage-sizer/) and
-[Network Sizer](https://scribnetai.github.io/network-sizer/) — any subset —
+[RVTools Analyzer](https://rvtools-analyzer.scribnet.io/),
+[Server Sizer](https://server-sizer.scribnet.io/),
+[Storage Sizer](https://storage-sizer.scribnet.io/) and
+[Network Sizer](https://network-sizer.scribnet.io/) — any subset —
 and get a customer-facing refresh proposal:
 
 - **Proposal** — executive summary, current-state findings, proposed architecture, next steps
@@ -13,7 +13,7 @@ and get a customer-facing refresh proposal:
 - **TCO** — old-vs-new cost model (a model, not a quote)
 - **Report** — the whole thing as a standalone downloadable HTML file
 
-Live at https://scribnetai.github.io/deal-pack/ — 100% client-side, nothing uploaded.
+Live at https://deal-pack.scribnet.io/ — 100% client-side, nothing uploaded.
 
 ## Dev
 
